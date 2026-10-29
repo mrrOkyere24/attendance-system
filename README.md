@@ -1,16 +1,134 @@
-# React + Vite
+# Attendance Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based attendance management system built with React, Node.js, Express, and MySQL. The application allows administrators to manage employees and monitor attendance, while employees can check in and check out using their registered names.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Admin Dashboard
+- View attendance statistics and employee records.
+- Add, edit, and delete employee records.
+- Search for employees.
+- Monitor employee attendance status.
+- View attendance information and reports.
 
-## React Compiler
+### Employee Attendance
+- Enter a name to access attendance.
+- Verify employees against registered member records.
+- Check in and check out.
+- Track attendance status based on check-in time.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Attendance Rules
+- **Work start time:** 9:00 AM.
+- **Present:** Check in at or before 9:00 AM.
+- **Late:** Check in after 9:00 AM.
+- **Absent:** Employees who have not checked in by 12:00 PM.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Frontend**
+- React
+- Vite
+- JavaScript
+- CSS
+
+**Backend**
+- Node.js
+- Express.js
+
+**Database**
+- MySQL
+
+**Development Tools**
+- Visual Studio Code
+- Git and GitHub
+- XAMPP / phpMyAdmin
+
+### Prerequisites
+
+Install the following before running the project:
+
+- Node.js and npm
+- MySQL, or XAMPP with MySQL
+- A web browser
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/mrrOkyere24/attendance-system.git
+cd attendance-system
+```
+
+### 2. Install Frontend Dependencies
+
+```bash
+npm install
+```
+
+### 3. Set Up the Database
+
+1. Start MySQL using XAMPP or your installed MySQL service.
+2. Open phpMyAdmin.
+3. Create a database named `attendance_system`.
+4. Ensure the required `members` and `attendance` tables exist.
+
+The database tables must match the queries used in the backend. Database table creation scripts can be added to this repository to make setup easier.
+
+### 4. Configure the Backend
+
+Navigate to the backend folder:
+
+```bash
+cd backend
+npm install
+```
+
+Check `config/db.js` and update the database connection settings if your MySQL username, password, host, or database name differs from your local configuration.
+
+### 5. Start the Backend
+
+From the `backend` directory, run:
+
+```bash
+node server.js
+```
+
+The backend server runs at:
+
+```text
+http://localhost:5000
+```
+
+### 6. Start the Frontend
+
+Open another terminal in the main project directory and run:
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed by Vite in your browser.
+
+## Important Notes
+
+- The frontend and backend must both be running for database-backed features to work.
+- MySQL must be running before the backend connects.
+- The database connection settings must match your local MySQL configuration.
+- `localhost` is intended for local development; deployment requires a hosted backend and database configuration.
+- Never commit database passwords, API keys, or other sensitive credentials to a public repository.
+
+## Future Improvements
+
+- Secure administrator authentication and authorization.
+- Improved attendance reports and date filtering.
+- Export attendance reports to CSV or PDF.
+- Better validation and error handling.
+- Deployment to a production hosting environment.
+
+## Author
+
+**GitHub:** [@mrrOkyere24](https://github.com/mrrOkyere24)
+
+---
+
+This project was developed to simplify employee attendance tracking and make attendance records easier to manage.
+
